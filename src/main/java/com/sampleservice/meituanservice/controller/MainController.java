@@ -1,5 +1,6 @@
 package com.sampleservice.meituanservice.controller;
 
+import com.sampleservice.meituanservice.utils.MBaseUtils;
 import com.septemberhx.common.base.MResponse;
 import com.septemberhx.mclient.annotation.MApiFunction;
 import com.septemberhx.mclient.annotation.MRestApiType;
@@ -20,6 +21,10 @@ public class MainController extends MObject {
     public MResponse hotelFunction(@RequestBody MResponse requestData) {
         MResponse result = new MResponse();
         result.set("msg", "/hotel");
+
+        if (requestData.get("interval") != null) {
+            MBaseUtils.generateStringInKBSize(300, result, (int) requestData.get("interval"));
+        }
         return result;
     }
 
@@ -30,6 +35,10 @@ public class MainController extends MObject {
     public MResponse canteenFunction(@RequestBody MResponse requestData) {
         MResponse result = new MResponse();
         result.set("msg", "/canteen");
+
+        if (requestData.get("interval") != null) {
+            MBaseUtils.generateStringInKBSize(500, result, (int) requestData.get("interval"));
+        }
         return result;
     }
 
@@ -40,6 +49,10 @@ public class MainController extends MObject {
     public MResponse carryoutFunction(@RequestBody MResponse requestData) {
         MResponse result = new MResponse();
         result.set("msg", "/carryout");
+
+        if (requestData.get("interval") != null) {
+            MBaseUtils.generateStringInKBSize(400, result, (int) requestData.get("interval"));
+        }
         return result;
     }
 }
