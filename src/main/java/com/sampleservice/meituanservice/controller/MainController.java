@@ -23,7 +23,7 @@ public class MainController extends MObject {
         result.set("msg", "/hotel");
 
         if (requestData.get("interval") != null) {
-            MBaseUtils.generateStringInKBSize(300, result, (long) requestData.get("interval"));
+            MBaseUtils.generateStringInKBSize(300, result, (int) requestData.get("interval"));
         }
         return result;
     }
@@ -37,7 +37,7 @@ public class MainController extends MObject {
         result.set("msg", "/canteen");
 
         if (requestData.get("interval") != null) {
-            MBaseUtils.generateStringInKBSize(500, result, (long) requestData.get("interval"));
+            MBaseUtils.generateStringInKBSize(500, result, (int) requestData.get("interval"));
         }
         return result;
     }
@@ -51,7 +51,7 @@ public class MainController extends MObject {
         result.set("msg", "/carryout");
 
         if (requestData.get("interval") != null) {
-            MBaseUtils.generateStringInKBSize(400, result, (long) requestData.get("interval"));
+            MBaseUtils.generateStringInKBSize(400, result, (int) requestData.get("interval"));
         }
         return result;
     }
